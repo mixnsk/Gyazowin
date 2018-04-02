@@ -858,7 +858,7 @@ BOOL uploadFile(HWND hwnd, LPCTSTR fileName)
 	
 	// �ڑ���
 	HINTERNET hConnection = InternetConnect(hSession, 
-		UPLOAD_SERVER, INTERNET_DEFAULT_HTTP_PORT,
+		UPLOAD_SERVER, INTERNET_DEFAULT_HTTPS_PORT,
 		NULL, NULL, INTERNET_SERVICE_HTTP, 0, NULL);
 	if(NULL == hSession) {
 		MessageBox(hwnd, _T("Cannot initiate connection"),
