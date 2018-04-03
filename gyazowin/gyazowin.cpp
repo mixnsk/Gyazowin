@@ -792,7 +792,7 @@ BOOL saveId(const WCHAR* str)
 BOOL uploadFile(HWND hwnd, LPCTSTR fileName)
 {
 	const TCHAR* UPLOAD_SERVER	= _T("img.mixnsk.ru");
-	const TCHAR* UPLOAD_PATH	= _T("/i/upload.php");
+	const TCHAR* UPLOAD_PATH	= _T("i.php");
 
 	const char*  sBoundary = "----BOUNDARYBOUNDARY----";		// boundary
 	const char   sCrLf[]   = { 0xd, 0xa, 0x0 };					// ���s(CR+LF)
@@ -869,7 +869,7 @@ BOOL uploadFile(HWND hwnd, LPCTSTR fileName)
 	// �v����̐ݒ�
 	HINTERNET hRequest    = HttpOpenRequest(hConnection,
 		_T("POST"), UPLOAD_PATH, NULL,
-		NULL, NULL, INTERNET_FLAG_DONT_CACHE | INTERNET_FLAG_RELOAD, NULL);
+		NULL, NULL, INTERNET_FLAG_DONT_CACHE | INTERNET_FLAG_RELOAD | INTERNET_FLAG_SECURE, NULL);
 	if(NULL == hSession) {
 		MessageBox(hwnd, _T("Cannot compose post request"),
 			szTitle, MB_ICONERROR | MB_OK);
